@@ -80,8 +80,8 @@ export const GALLERY = [
     { id: "aniimo2", game: "aniimo", type: "image", src: "/assets/aniimo-shot2.jpg", title: "Aniimo adventure", alt: "Aniimo characters exploring a mystical world" },
       { id: "aniimo3", game: "aniimo", type: "image", src: "/assets/aniimo-shot3.jpg", title: "Aniimo adventure", alt: "Aniimo characters exploring a mystical world" },
         
-  { id: "roblox1", game: "roblox", type: "image", src: "/assets/roblox.jpg", title: "Roblox adventure", alt: "Roblox characters exploring a virtual world" },
-    { id: "roblox2", game: "roblox", type: "image", src: "/assets/roblox.jpg", title: "Roblox adventure", alt: "Roblox characters exploring a virtual world" },
+  { id: "roblox1", game: "roblox", type: "image", src: "/assets/roblox-shot1.jpg", title: "Demonology", alt: "Roblox characters exploring a virtual world" },
+    { id: "roblox2", game: "roblox", type: "image", src: "/assets/roblox-shot2.jpg", title: "Imposter", alt: "Roblox characters exploring a virtual world" },
 
   { id: "mlbb1", game: "mobile-legends", type: "image", src: "/assets/mlbb-shot1.jpg", title: "Lord fight in the Land of Dawn", alt: "Mobile Legends team fight around the Lord" },
     { id: "mlbb2", game: "mobile-legends", type: "image", src: "/assets/mlbb-shot2.jpg", title: "New season, new map", alt: "Mobile Legends hero beside the updated battlefield map" },
