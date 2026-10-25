@@ -1,4 +1,4 @@
-export const DISCORD_URL = "https://discord.gg/sleepless";
+export const DISCORD_URL = "https://discord.gg/sleepless-placeholder";
 
 export const GAMES = [
   {
@@ -70,24 +70,68 @@ export const VIBES = [
 ];
 
 export const GALLERY = [
-  { id: "mlbb-gameplay", game: "mobile-legends", type: "image", src: "/assets/mlbb-gameplay.jpg", title: "Lord fight in the Land of Dawn", alt: "Mobile Legends team fight around the Lord" },
-  { id: "wwm-duel", game: "where-winds-meet", type: "image", src: "/assets/wwm-shot2.jpg", title: "Duel on the frozen lake", alt: "Two Where Winds Meet fighters facing off on a misty lake" },
-  { id: "mlbb-map", game: "mobile-legends", type: "image", src: "/assets/mlbb-map.jpg", title: "New season, new map", alt: "Mobile Legends hero beside the updated battlefield map" },
-  { id: "wwm-ride", game: "where-winds-meet", type: "image", src: "/assets/wwm-shot3.jpg", title: "Sunset ride through red fields", alt: "Where Winds Meet rider crossing red grass at sunset" },
-  { id: "mlbb-skins", game: "mobile-legends", type: "image", src: "/assets/mlbb-skins.jpg", title: "Fresh skins drop", alt: "Mobile Legends heroes showing new Aspirants skins" },
-  { id: "wwm-night", game: "where-winds-meet", type: "image", src: "/assets/wwm-hero.jpg", title: "Night raid crew", alt: "Two Where Winds Meet swordsmen at night under lanterns" },
+//  { id: "mlbb-gameplay", game: "mobile-legends", type: "image", src: "/assets/mlbb-gameplay.jpg", title: "Lord fight in the Land of Dawn", alt: "Mobile Legends team fight around the Lord" },
+//  { id: "wwm-duel", game: "where-winds-meet", type: "image", src: "/assets/wwm-shot2.jpg", title: "Duel on the frozen lake", alt: "Two Where Winds Meet fighters facing off on a misty lake" },
+//  { id: "mlbb-map", game: "mobile-legends", type: "image", src: "/assets/mlbb-map.jpg", title: "New season, new map", alt: "Mobile Legends hero beside the updated battlefield map" },
+//  { id: "wwm-ride", game: "where-winds-meet", type: "image", src: "/assets/wwm-shot3.jpg", title: "Sunset ride through red fields", alt: "Where Winds Meet rider crossing red grass at sunset" },
+//  { id: "mlbb-skins", game: "mobile-legends", type: "image", src: "/assets/mlbb-skins.jpg", title: "Fresh skins drop", alt: "Mobile Legends heroes showing new Aspirants skins" },
+//  { id: "wwm-night", game: "where-winds-meet", type: "image", src: "/assets/wwm-shot1.jpg", title: "Night raid crew", alt: "Two Where Winds Meet swordsmen at night under lanterns" },
+  { id: "aniimo1", game: "aniimo", type: "image", src: "/assets/aniimo-shot1.jpg", title: "Aniimo adventure", alt: "Aniimo characters exploring a mystical world" },
+    { id: "aniimo2", game: "aniimo", type: "image", src: "/assets/aniimo-shot2.jpg", title: "Aniimo adventure", alt: "Aniimo characters exploring a mystical world" },
+      { id: "aniimo3", game: "aniimo", type: "image", src: "/assets/aniimo-shot3.jpg", title: "Aniimo adventure", alt: "Aniimo characters exploring a mystical world" },
+        
+  { id: "roblox1", game: "roblox", type: "image", src: "/assets/roblox.jpg", title: "Roblox adventure", alt: "Roblox characters exploring a virtual world" },
+    { id: "roblox2", game: "roblox", type: "image", src: "/assets/roblox.jpg", title: "Roblox adventure", alt: "Roblox characters exploring a virtual world" },
+
+  { id: "mlbb1", game: "mobile-legends", type: "image", src: "/assets/mlbb-shot1.jpg", title: "Lord fight in the Land of Dawn", alt: "Mobile Legends team fight around the Lord" },
+    { id: "mlbb2", game: "mobile-legends", type: "image", src: "/assets/mlbb-shot2.jpg", title: "New season, new map", alt: "Mobile Legends hero beside the updated battlefield map" },
+      { id: "mlbb3", game: "mobile-legends", type: "image", src: "/assets/mlbb-shot3.jpg", title: "Fresh skins drop", alt: "Mobile Legends heroes showing new Aspirants skins" },
+
+  { id: "wwm1", game: "where-winds-meet", type: "image", src: "/assets/wwm-shot1.jpg", title: "Night raid crew", alt: "Two Where Winds Meet swordsmen at night under lanterns" },
+    { id: "wwm2", game: "where-winds-meet", type: "image", src: "/assets/wwm-shot2.jpg", title: "Duel on the frozen lake", alt: "Two Where Winds Meet fighters facing off on a misty lake" },
+      { id: "wwm3", game: "where-winds-meet", type: "image", src: "/assets/wwm-shot3.jpg", title: "Sunset ride through red fields", alt: "Where Winds Meet rider crossing red grass at sunset" },
+
+
 ];
 
 export const SCHEDULE = [
-  { day: "Mon", time: "21:00", game: "where-winds-meet", title: "Guild boss run" },
-  { day: "Tue", time: "21:00", game: "roblox", title: "Horror map night" },
-  { day: "Wed", time: "21:30", game: "aniimo", title: "Rare creature hunt" },
-  { day: "Thu", time: "21:00", game: "where-winds-meet", title: "Co-op exploration" },
-  { day: "Fri", time: "22:00", game: "roblox", title: "Party games marathon" },
-  { day: "Wed", time: "23:00", game: "mobile-legends", title: "Five-stack ranked climb" },
-  { day: "Sat", time: "20:00", game: "aniimo", title: "Team build swap & co-op" },
-  { day: "Sat", time: "22:30", game: "mobile-legends", title: "Custom lobby brawl" },
-  { day: "Sun", time: "20:00", game: "where-winds-meet", title: "Friendly sparring cup" },
+  {
+    day: "Mon",
+    events: [{ time: "21:00", game: "where-winds-meet", title: "Guild boss run" }],
+  },
+  {
+    day: "Tue",
+    events: [{ time: "21:00", game: "roblox", title: "Horror map night" }],
+  },
+  {
+    day: "Wed",
+    events: [
+      { time: "21:30", game: "aniimo", title: "Rare creature hunt" },
+      { time: "23:00", game: "mobile-legends", title: "Five-stack ranked climb" },
+    ],
+  },
+  {
+    day: "Thu",
+    events: [{ time: "21:00", game: "where-winds-meet", title: "Co-op exploration" }],
+  },
+  {
+    day: "Fri",
+    events: [
+      { time: "20:00", game: "mobile-legends", title: "Classic warm-up matches" },
+      { time: "22:00", game: "roblox", title: "Party games marathon" },
+    ],
+  },
+  {
+    day: "Sat",
+    events: [
+      { time: "20:00", game: "aniimo", title: "Team build swap & co-op" },
+      { time: "22:30", game: "mobile-legends", title: "Custom lobby brawl" },
+    ],
+  },
+  {
+    day: "Sun",
+    events: [{ time: "20:00", game: "where-winds-meet", title: "Friendly sparring cup" }],
+  },
 ];
 
 export const STEPS = [
