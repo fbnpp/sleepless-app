@@ -89,8 +89,8 @@ export const GALLERY = [
 
   { id: "wwm1", game: "where-winds-meet", type: "image", src: "/assets/wwm-shot1.jpg", title: "Night raid crew", alt: "Two Where Winds Meet swordsmen at night under lanterns" },
     { id: "wwm2", game: "where-winds-meet", type: "image", src: "/assets/wwm-shot2.jpg", title: "Duel on the frozen lake", alt: "Two Where Winds Meet fighters facing off on a misty lake" },
-      { id: "wwm3", game: "where-winds-meet", type: "image", src: "/assets/wwm-shot3.jpg", title: "Sunset ride through red fields", alt: "Where Winds Meet rider crossing red grass at sunset" },
-
+        { id: "wwm3", game: "where-winds-meet", type: "youtube", src: "D2T-E0WDmy0", title: "LVL 100 HR Veiled Lady and Halcyon Guide", alt: "HR" },
+          { id: "wwm4", game: "where-winds-meet", type: "youtube", src: "vkq9dKc4TvY", title: "LVL 100 ST Lodestar & Bell Toller Guide", alt: "ST" },
 
 ];
 
