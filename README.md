@@ -41,6 +41,11 @@ everything under `frontend/src/...` there is under `src/...` here, and `frontend
    ```
 3. Open the address it prints, usually http://localhost:5173
 
+**About "vulnerabilities" warnings after `npm install`:** these are normal and safe to ignore.
+The remaining warnings come from Tailwind CSS, a styling tool that only runs while the site is being built. It never runs on your live site or in visitors' browsers.
+**Do not run `npm audit fix --force`.** It can install incompatible versions and break the build.
+If you already ran it, delete `node_modules` and `package-lock.json`, put back the original `package.json`, and run `npm install` again.
+
 ## Put it online for free
 
 **Netlify (no coding tools needed)**
