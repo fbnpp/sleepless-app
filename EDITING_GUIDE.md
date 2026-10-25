@@ -120,18 +120,29 @@ Game art belongs to its publishers. It's generally fine for a fan community, but
 
 ## 4. Edit the weekly schedule
 
-In `site.js`, find `export const SCHEDULE = [`:
+In `site.js`, find `export const SCHEDULE = [`. Each **day** is one block, and each day can have **as many events as you like**:
 
 ```js
-{ day: "Mon", time: "21:00", game: "where-winds-meet", title: "Guild boss run" },
+{
+  day: "Sat",
+  events: [
+    { time: "20:00", game: "aniimo", title: "Team build swap & co-op" },
+    { time: "22:30", game: "mobile-legends", title: "Custom lobby brawl" },
+  ],
+},
 ```
 
 - `day`: any short text, like `"Mon"` or `"Fri"`.
-- `time`: any text, like `"21:00"` or `"9 PM"`.
-- `game`: must exactly match one game's `id` from section 2.
-- `title`: the event name.
+- `events`: the list of sessions for that day, inside `[ ]`.
+  - `time`: written like `"21:00"` (24-hour, with a leading zero, e.g. `"09:00"`). Events are sorted by this time automatically.
+  - `game`: must exactly match one game's `id` from section 2.
+  - `title`: the event name.
 
-Add, delete or reorder lines freely. Two events on the same day are fine.
+**Add another event to a day:** copy one `{ time: ..., title: ... },` line inside that day's `events: [ ]` and change it.
+**Remove an event:** delete its line. To remove a whole day, delete its `{ day: ..., events: [...] },` block.
+**Add a new day:** copy a whole day block. Days show in the order you write them.
+
+When a visitor filters by one game, only that game's events show. Days with none of that game's events are hidden.
 
 To set your time zone, open `components/site/Schedule.jsx`, search for `[your time zone]` and replace it, e.g. `GMT+7`.
 Also update the last FAQ answer in `site.js`, which mentions `[your time zone]`.
@@ -197,6 +208,9 @@ What each field means:
 - `alt`: optional picture description for blind users and Google.
 
 Filter buttons are created automatically for each game that has at least one item.
+The **All** button shows a **random mix of up to 9 items** (a 3×3 grid), reshuffled every time the page loads, so the page stays light even with lots of clips.
+Clicking a game's button shows **every** item for that game. Images only download when they're actually shown.
+To show more or fewer items under All, change `const ALL_LIMIT = 9;` in `components/site/Gallery.jsx`. Use a multiple of 3 to keep the grid full.
 To show clips from Roblox or Aniimo too, just add items with `game: "roblox"` or `game: "aniimo"` and their buttons appear.
 Tiles are always the same 16:9 shape, so the grid stays neat however many you add.
 
