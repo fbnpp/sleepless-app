@@ -1,6 +1,6 @@
 import { useMemo, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Play, Expand } from "lucide-react";
+import { Play, Expand, Plus } from "lucide-react";
 import { GAMES, GALLERY } from "../../data/site";
 import { Reveal, SectionLabel } from "./Reveal";
 import { GalleryLightbox } from "./GalleryLightbox";
@@ -8,7 +8,8 @@ import { GalleryLightbox } from "./GalleryLightbox";
 const byId = Object.fromEntries(GAMES.map((g) => [g.id, g]));
 const gameIds = [...new Set(GALLERY.map((c) => c.game))];
 const TABS = [{ id: "all", name: "All" }, ...gameIds.map((id) => byId[id]).filter(Boolean)];
-const ALL_LIMIT = 9;
+const PAGE_SIZE = 6;
+
 
 const shuffle = (list) => {
   const a = [...list];
@@ -55,8 +56,12 @@ const Tile = ({ c, onOpen }) => {
 export const Gallery = () => {
   const [tab, setTab] = useState("all");
   const [open, setOpen] = useState(null);
-  const randomPicks = useMemo(() => shuffle(GALLERY).slice(0, ALL_LIMIT), []);
-  const items = tab === "all" ? randomPicks : GALLERY.filter((c) => c.game === tab);
+  const [visible, setVisible] = useState(PAGE_SIZE);
+  const shuffled = useMemo(() => shuffle(GALLERY), []);
+  const filtered = tab === "all" ? shuffled : GALLERY.filter((c) => c.game === tab);
+  const items = filtered.slice(0, visible);
+  const remaining = filtered.length - items.length;
+  const selectTab = (id) => { setTab(id); setVisible(PAGE_SIZE); };
   return (
     <section id="clips" data-testid="clips-gallery" className="mx-auto max-w-[1400px] px-5 py-24 sm:px-8 sm:py-32">
       <Reveal className="flex flex-col justify-between gap-8 lg:flex-row lg:items-end">
@@ -69,7 +74,7 @@ export const Gallery = () => {
         </div>
         <div className="flex flex-wrap gap-2">
           {TABS.map((t) => (
-            <button key={t.id} data-testid={`gallery-tab-${t.id}`} onClick={() => setTab(t.id)} className="relative rounded-full border sl-line px-4 py-2 text-sm font-semibold">
+              <button key={t.id} data-testid={`gallery-tab-${t.id}`} onClick={() => selectTab(t.id)} className="relative rounded-full border sl-line px-4 py-2 text-sm font-semibold">
               {tab === t.id && <motion.span layoutId="gallerypill" className="absolute inset-0 rounded-full bg-[var(--accent)]" transition={{ type: "spring", stiffness: 380, damping: 32 }} />}
               <span className={`relative ${tab === t.id ? "text-white" : ""}`}>{t.name}</span>
             </button>
@@ -81,6 +86,18 @@ export const Gallery = () => {
           {items.map((c) => <Tile key={c.id} c={c} onOpen={() => setOpen(c)} />)}
         </AnimatePresence>
       </motion.div>
+            {remaining > 0 && (
+        <div className="mt-10 flex justify-center">
+          <button
+            data-testid="gallery-load-more"
+            onClick={() => setVisible((v) => v + PAGE_SIZE)}
+            className="inline-flex items-center gap-2 rounded-full border sl-line px-6 py-3 text-sm font-semibold transition-colors hover:bg-[var(--accent)] hover:text-white"
+          >
+            <Plus size={16} /> Load more
+            <span className="sl-mono text-xs opacity-70">({remaining})</span>
+          </button>
+        </div>
+      )}
       <GalleryLightbox item={open} onClose={() => setOpen(null)} />
     </section>
   );
